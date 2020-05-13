@@ -3,10 +3,24 @@ const connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'hyfuser',
   password : 'hyfpassword',
-  database : 'meetup'
 });
 
 connection.connect();
+
+connection.query('DROP DATABASE IF EXISTS meetup', function (err, result) {
+    if (err) throw err;
+    console.log('Database deleted');
+});
+
+connection.query('CREATE DATABASE meetup', function (err, result) {
+    if (err) throw err;
+    console.log('Database created');
+});
+
+connection.query('USE meetup', function (err, result) {
+    if (err) throw err;
+    console.log('Database connected');
+});
 
 const queries = [
     "DROP TABLE IF EXISTS Invitee",
@@ -23,38 +37,37 @@ for(let i in queries){
     });
 };
 
-const queriesInvitee = [
-    "insert into Invitee values (1,'Sena','Ayse')",
-    "insert into Invitee values (2,'Rana','Merve')",
-    "insert into Invitee values (3,'Emir','Emre')",
-    "insert into Invitee values (4,'Omer','Ali')",
-    "insert into Invitee values (5,'Yasemin','Selahattin')"
-];
-const queriesRoom = [
-    "insert into Room values (101,'First Room',1)",
-    "insert into Room values (102,'Second Room',2)",
-    "insert into Room values (103,'New Room',3)",
-    "insert into Room values (104,'Big Room',4)",
-    "insert into Room values (105,'Last Room',5)"
-];
-const queriesMeeting = [
-    "insert into Meeting values (201,'Planning','2020-05-15 10:00','2020-05-15 12:00',3)",
-    "insert into Meeting values (202,'Teamwork','2020-05-05 19:00','2020-05-05 21:00',2)",
-    "insert into Meeting values (203,'Top Performance','2020-05-20 14:00','2020-05-20 16:00',1)",
-    "insert into Meeting values (204,'Community','2020-05-17 08:30','2020-05-17 10:30',5)",
-    "insert into Meeting values (205,'Vision','2020-05-23 15:00','2020-05-23 17:00',6)"
-];
-  
-const allQueries = [queriesInvitee, queriesRoom, queriesMeeting];
+const allTables = {
+    Invitee: [
+        {invitee_no:1, invitee_name:'Sena', invited_by:'Ayse'},
+        {invitee_no:2, invitee_name:'Rana', invited_by:'Merve'},
+        {invitee_no:3, invitee_name:'Emir', invited_by:'Emre'},
+        {invitee_no:4, invitee_name:'Omer', invited_by:'Ali'},
+        {invitee_no:5, invitee_name:'Yasemin', invited_by:'Selahattin'}
+    ],
+    Room: [
+        {room_no:101, room_name:'First Room', floor_number:1},
+        {room_no:102, room_name:'Second Room', floor_number:2},
+        {room_no:103, room_name:'New Room', floor_number:3},
+        {room_no:104, room_name:'Big Room', floor_number:4},
+        {room_no:105, room_name:'Last Room', floor_number:5}
+    ],
+   
+    Meeting: [
+        {meeting_no:201, meeting_title:'Planning', starting_time:'2020-05-15 10:00', ending_time:'2020-05-15 12:00', room_no: 3},
+        {meeting_no:202, meeting_title:'Teamwork', starting_time:'2020-05-05 19:00', ending_time:'2020-05-05 21:00', room_no: 2},
+        {meeting_no:203, meeting_title:'Top Performance', starting_time:'2020-05-20 14:00', ending_time:'2020-05-20 16:00', room_no: 1},
+        {meeting_no:204, meeting_title:'Community', starting_time:'2020-05-17 08:30', ending_time:'2020-05-17 10:30', room_no: 5},
+        {meeting_no:205, meeting_title:'Vision', starting_time:'2020-05-23 15:00', ending_time:'2020-05-23 17:00', room_no: 6}
+    ],
+};
 
-allQueries.forEach(queries => {
-    queries.forEach(item => {
-        connection.query(item, (error, results, fields) => {     
-            if (error) throw error;
-            console.log("The insert is successful");
-        });
+
+Object.keys(allTables).map(entity => {
+    allTables[entity].map( item => {
+        connection.query(`INSERT INTO ${entity} SET ? `, item);
     });
-});
-
+}),
+  
 connection.end();
  
