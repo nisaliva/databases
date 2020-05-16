@@ -1,0 +1,16 @@
+{
+  "name": "mongoexercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mongoDb.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Nisa",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.5.7",
+    "util": "^0.12.3"
+  }
+}
