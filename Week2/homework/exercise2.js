@@ -38,8 +38,13 @@ async function seedDatabase() {
 		await execQuery(RelationTable);
 		
 		authors.forEach(async (author) => {
+			try{
 			await execQuery('INSERT INTO Authors SET ?', author);
-        });
+			}
+			catch(error){
+				console.log(error);
+			}
+		});
     
 		researchPapers.forEach(async (paper) => {
 			await execQuery('INSERT INTO Research_Papers SET ?', paper);
@@ -55,11 +60,12 @@ async function seedDatabase() {
 			}),
 		);
 
+		connection.end();
+
 	} catch (error) {
         console.error(error)
         connection.end();
 	}
 
-	connection.end();
 }
 seedDatabase();

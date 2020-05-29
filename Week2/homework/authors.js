@@ -1,6 +1,6 @@
 const authors = [
     {
-      // author_no: 1,
+      author_no: 1,
       author_name: 'Alex',
       university: 'University_A',
       date_of_birth: '1970-01-01',
@@ -8,7 +8,7 @@ const authors = [
       gender: 'm',
     },
     {
-      // author_no: 2,  
+      author_no: 2,  
       author_name: 'Alexandra',
       university: 'University_B',
       date_of_birth: '1982-01-01',
@@ -16,7 +16,7 @@ const authors = [
       gender: 'f',
     },
     {
-      // author_no: 3,  
+      author_no: 3,  
       author_name: 'Elena',
       university: 'University_C',
       date_of_birth: '1981-01-01',
@@ -24,7 +24,7 @@ const authors = [
       gender: 'f',
     },
     {
-      // author_no: 4,
+      author_no: 4,
       author_name: 'Ekatherina',
       university: 'University_D',
       date_of_birth: '1979-02-01',
@@ -32,7 +32,7 @@ const authors = [
       gender: 'f',
     },
     {
-      // author_no: 5, 
+      author_no: 5, 
       author_name: 'Oleg',
       university: 'University_E',
       date_of_birth: '1983-01-01',
@@ -40,7 +40,7 @@ const authors = [
       gender: 'm',
     },
     {
-      // author_no: 6,
+      author_no: 6,
       author_name: 'Maria',
       university: 'University_F',
       date_of_birth: '1978-01-01',
@@ -48,7 +48,7 @@ const authors = [
       gender: 'f',
     },
     {
-      // author_no: 7,
+      author_no: 7,
       author_name: 'Natalia',
       university: 'University_G',
       date_of_birth: '1984-01-01',
@@ -56,7 +56,7 @@ const authors = [
       gender: 'f',
     },
     {
-      // author_no: 8,
+      author_no: 8,
       author_name: 'Irina',
       university: 'University_H',
       date_of_birth: '1985-01-01',
@@ -64,7 +64,7 @@ const authors = [
       gender: 'f',
     },
     {
-      // author_no: 9,
+      author_no: 9,
       author_name: 'Mihail',
       university: 'University_A',
       date_of_birth: '1980-01-01',
@@ -72,7 +72,7 @@ const authors = [
       gender: 'm',
     },
     {
-      // author_no: 10,
+      author_no: 10,
       author_name: 'Dimitriy',
       university: 'University_B',
       date_of_birth: '1986-01-01',
@@ -80,7 +80,7 @@ const authors = [
       gender: 'm',
     },
     {
-      // author_no: 11,
+      author_no: 11,
       author_name: 'Aleksander',
       university: 'University_C',
       date_of_birth: '1982-01-01',
@@ -88,7 +88,7 @@ const authors = [
       gender: 'm',
     },
     {
-      // author_no: 12,
+      author_no: 12,
       author_name: 'Boris',
       university: 'University_D',
       date_of_birth: '1981-01-01',
@@ -96,7 +96,7 @@ const authors = [
       gender: 'm',
     },
     {
-      // author_no: 13,
+      author_no: 13,
       author_name: 'Victor',
       university: 'University_E',
       date_of_birth: '1980-01-01',
@@ -104,7 +104,7 @@ const authors = [
       gender: 'm',
     },
     {
-      // author_no: 14,
+      author_no: 14,
       author_name: 'Ivan',
       university: 'University_F',
       date_of_birth: '1975-01-01',
@@ -112,7 +112,7 @@ const authors = [
       gender: 'm',
     },
     {
-      // author_no: 15,
+      author_no: 15,
       author_name: 'Igor',
       university: 'University_G',
       date_of_birth: '1984-01-01',
